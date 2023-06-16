@@ -45,54 +45,6 @@ class document_clf:
           """
         self.documents = list(self.token_dict.keys())
 
-    # Used as a constructor to get the best heap
-    def draw_every_heap(self):
-        # Get the list of document names
-        self.get_document_names()
-
-        file_name_lst = self.documents
-    
-        # Set the number of most similar documents to return
-        k = 15
-        # Set a threshold for cosine similarity
-        threshold = 0.5
-        
-        # array to store document numbers stored by heap
-        j = 0
-        counter = 0
-        best_heap = None
-        best_heap_num_covered = 0
-        while j < len(self.documents):
-            # Initialize a heap data structure with the first document
-            # heap will generate relevant document according to the root document
-            file_name_lst2 = file_name_lst[j:len(self.documents)]
-            heap = [(1, self.tf_idf_vectors[j], 1, file_name_lst2[0])]
-
-            # Loop through each subsequent document
-            for i in range(j+1, self.tf_idf_vectors.shape[0]):
-                # Calculate cosine similarity between the new document and each document currently in the heap
-                cosine_similarities = [1 - cosine(heap_item[1].toarray()[0], self.tf_idf_vectors[i].toarray()[0]) for heap_item in heap]
-
-                # Check if the cosine similarity between the new document and any document in the heap is greater than the threshold value
-                if max(cosine_similarities) >= threshold:
-                    # Add the new document to the heap
-                    heap_item = (i + 1, self.tf_idf_vectors[i], max(cosine_similarities), file_name_lst2[i-j])
-                    heapq.heappush(heap, heap_item)
-
-                    # Remove the document with the lowest cosine similarity if the heap is full
-                    if len(heap) > k:
-                        heapq.heappop(heap)
-
-            # check if this heap has more covered documents than the current best heap
-            if len(heap) > best_heap_num_covered:
-                best_heap = heap
-                best_heap_num_covered = len(heap)
-
-            j += 1
-            draw_heap(heap)
-
-        return best_heap
-    
         # Used as a constructor to get the best heap
     def get_heap(self):
         # Get the list of document names
