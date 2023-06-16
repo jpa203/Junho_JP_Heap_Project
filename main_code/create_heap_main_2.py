@@ -17,16 +17,20 @@ from K_means_cluster import elbow_method, K_means_cluster, plot_k_means
 
 @dataclass
 class document_clf:
-    def __init__(self, source_dir):
-        self.source_dir = source_dir
-        self.token_dict = get_combined_token_dict(source_dir)
-        self.tf_idf_vectors = None
-        self.tf_idf_matrix = None
-        self.best_heap = None
-        self.documents = None
-        self.term = ""
+    def __init__(self,source_dir):
+        self.source_dir=source_dir # Working Directory to cluster documents 
+        self.token_dict=get_combined_token_dict(source_dir) # Get dictionary of tokens retrieved from both docx and pdf
+        self.tf_idf_vectors=None # Constructor to generate tf_idf_vector from combined_token_dict and store tf_idf_vectors
+        self.tf_idf_matrix=None # Constructor to store tf_idf_matrix generated from tf_idf_vectors
+        self.best_heap # store best heap once the loop is finished
+        self.documents=None #
+        self.term="" #Constructor to store file names after extracting topic and rename 
 
     def create_tf_idf_matrix(self):
+      """
+      Create tfidf vector and matrix using sklearn's TfidfVectorizer from combined_token_dict which stores all tokens for docx and pdf files.
+      Uses get_feature_names_out function to get all the feature names from the token
+      """
         token_lst = list(self.token_dict.values())
         # Return the list of document text
         vectorizer = TfidfVectorizer()
@@ -36,6 +40,9 @@ class document_clf:
         file_name_string = "_".join(self.term)
 
     def get_document_names(self):
+          """
+          Get list of document names to assign to heap structure visualization and labeling
+          """
         self.documents = list(self.token_dict.keys())
 
     # Used as a constructor to get the best heap
