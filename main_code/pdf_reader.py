@@ -108,7 +108,7 @@ def read_pdf_tf_idf(source_dir):
 def get_combined_token_dict(file_path):
     """Combine the token dictionaries from pdf and docx files."""
     pdf_dict = read_pdf_tf_idf(file_path)
-    docx_dict = read_docx_tf_idf2(file_path)
+    docx_dict = read_docx_tf_idf(file_path)
     combined_dict = {}
     combined_dict.update(pdf_dict)
     combined_dict.update(docx_dict)
