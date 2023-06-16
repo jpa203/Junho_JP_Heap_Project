@@ -85,16 +85,15 @@ class document_clf:
         return best_heap
     
 if __name__ == "__main__":
-    source_dir = "/Users/junhoeum/Desktop/Summer_23/doc_clustering_algo/test_document_3_27_23/Baseball_stat"
-
-    # Directory containing small num of documents
-    small_source_dir = "/Users/junhoeum/Desktop/Summer_23/doc_clustering_algo/test_document_3_27_23/test_sample"
-    cluster_object = document_clf(small_source_dir)
-    
+    source_dir = "<Your_Source_Directory>"
+    small_source_dir = "<Source_Directory_to_test_code_output>"
+    cluster_object = document_clf(source_dir)
     cluster_object.create_tf_idf_matrix()  # Call create_tf_idf_matrix() to initialize tf_idf_vectors
-    print(len(cluster_object.tf_idf_matrix))
-    elbow_method(3,cluster_object.tf_idf_matrix)
-    plot_k_means(cluster_object.tf_idf_matrix,cluster_object.term, 3)
+
+    #plot elbow method to decide the number of clusters for K_means_clustering
+    elbow_method("<num of clusters>",cluster_object.tf_idf_matrix)
+    #After inertia decrease point from elbow method, set new num of clusters and get the wordcloud
+    plot_k_means(cluster_object.tf_idf_matrix,cluster_object.term, "<num of clusters>")
 
     # Since create_heap function plots all 200 document seperately to draw_every_heap() / get_heap()
     best_heap = cluster_object.get_heap()
