@@ -90,7 +90,6 @@ class document_clf:
 
             j += 1
             
-
         return best_heap
     
 if __name__ == "__main__":
