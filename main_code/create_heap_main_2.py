@@ -24,7 +24,7 @@ class document_clf:
         self.token_dict=get_combined_token_dict(source_dir) # Get dictionary of tokens retrieved from both docx and pdf
         self.tf_idf_vectors=None # Constructor to generate tf_idf_vector from combined_token_dict and store tf_idf_vectors
         self.tf_idf_matrix=None # Constructor to store tf_idf_matrix generated from tf_idf_vectors
-        self.best_heap # store best heap once the loop is finished
+        self.best_heap=None# store best heap once the loop is finished
         self.documents=None #
         self.term="" #Constructor to store file names after extracting topic and rename 
 
