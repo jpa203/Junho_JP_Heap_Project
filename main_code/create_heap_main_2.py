@@ -29,10 +29,6 @@ class document_clf:
         self.term="" #Constructor to store file names after extracting topic and rename 
 
     def create_tf_idf_matrix(self):
-      """
-      Create tfidf vector and matrix using sklearn's TfidfVectorizer from combined_token_dict which stores all tokens for docx and pdf files.
-      Uses get_feature_names_out function to get all the feature names from the token
-      """
         token_lst = list(self.token_dict.values())
         # Return the list of document text
         vectorizer = TfidfVectorizer()
