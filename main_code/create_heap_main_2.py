@@ -14,6 +14,8 @@ from draw_heap import draw_heap, draw_best_heap
 from pdf_reader import pdf_to_text,read_pdf_tf_idf, get_combined_token_dict
 from sklearn.feature_extraction.text import TfidfVectorizer
 from K_means_cluster import elbow_method, K_means_cluster, plot_k_means
+import nltk
+nltk.download('words')
 
 @dataclass
 class document_clf:
