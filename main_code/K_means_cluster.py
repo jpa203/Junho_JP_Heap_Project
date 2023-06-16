@@ -85,6 +85,3 @@ def plot_k_means(tf_idf_vectors,terms,num_clusters=3):
         plt.axis("off")
         plt.title(f"Cluster {i + 1}")
         plt.show()
-
-if  __name__ == '__main__':
-    source_dir="/Users/junhoeum/Desktop/Summer_23/doc_clustering_algo"
