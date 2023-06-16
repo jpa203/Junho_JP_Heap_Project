@@ -6,7 +6,7 @@ import warnings
 from nltk.corpus import words, stopwords
 from nltk.tokenize import RegexpTokenizer
 from PyPDF2 import PdfReader
-from read_docx_tf_idf import read_docx_tf_idf2
+from read_docx_tf_idf import read_docx_tf_idf
 from lsa import extract_topic_pdf
 from matplotlib.axes._axes import _log as matplotlib_axes_logger
 
