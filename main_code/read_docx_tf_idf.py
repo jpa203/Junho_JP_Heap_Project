@@ -8,7 +8,7 @@ import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords
 
-def read_docx_tf_idf2(source_dir):
+def read_docx_tf_idf(source_dir):
     """Read docx files from a given directory and extract their text content then changes them into tf_idf_matrix."""
     # Get a list of all docx files in the source directory
     docx_files = sorted(os.listdir(source_dir))
