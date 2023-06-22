@@ -66,13 +66,18 @@ def K_means_cluster(tf_idf_matrix,doc_lst,num_clusters=4):
     return doc_label_dict
 
 
-def plot_k_means(tf_idf_vectors,terms,num_clusters=3):
+def plot_k_means(tf_idf_vectors,terms,doc_source,num_clusters):
     model = KMeans(n_clusters=num_clusters, init='k-means++', max_iter=100, n_init=1)
     model.fit(tf_idf_vectors)
 
     # print top terms per cluster and generate word clouds
     order_centroids = model.cluster_centers_.argsort()[:, ::-1]
 
+
+    # Create directory if it doesn't exist
+    output_dir = os.path.join(doc_source, "K-means_wordcloud")
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     for i in range(num_clusters):
         print(f"Cluster {i}:")
@@ -85,3 +90,6 @@ def plot_k_means(tf_idf_vectors,terms,num_clusters=3):
         plt.axis("off")
         plt.title(f"Cluster {i + 1}")
         plt.show()
+
+        # Save the figure to a file in the output directory
+        plt.savefig(os.path.join(output_dir, f"wordcloud_cluster_{i + 1}.png"))
