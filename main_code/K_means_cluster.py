@@ -24,6 +24,7 @@ def elbow_method(tf_idf_matrix):
         while True:
             # Ask user for number of clusters
             num_of_clusters = int(input("how many clusters do you want to use?: Press 0 to exit: "))
+            print("___________________________")
             cluster_count_lst.append(num_of_clusters)
 
             if num_of_clusters < 0:
@@ -59,7 +60,7 @@ def elbow_method(tf_idf_matrix):
 
                 # Print out the distortions for each value of k
                 for key, val in mapping1.items():
-                    print(f'{key} : {val}')
+                    print("Intertia for k = %d: %f" % (key, val))
 
                 # Plot the elbow curve
                 plt.plot(K, distortions, 'bx-')
@@ -98,6 +99,7 @@ def plot_k_means(tf_idf_vectors,terms,doc_source,num_clusters):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
+    print("Topic keywords from K means clustering:","\n"+"-----------------------")
     for i in range(num_clusters):
         print(f"Cluster {i}:")
         words = [terms[ind] for ind in order_centroids[i, :10]]
