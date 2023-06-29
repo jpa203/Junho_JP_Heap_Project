@@ -38,12 +38,9 @@ class document_clf:
         file_name_string = "_".join(self.term)
 
     def get_document_names(self):
-          """
-          Get list of document names to assign to heap structure visualization and labeling
-          """
+        #Get list of document names to assign to heap structure visualization and labeling
         self.documents = list(self.token_dict.keys())
 
-        # Used as a constructor to get the best heap
     def get_heap(self):
         self.get_document_names() # Get list of all document name and store it in a constructor
         k = 15 # number of sim documents to return for one heap
