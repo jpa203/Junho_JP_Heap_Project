@@ -21,10 +21,7 @@ import nltk
 """
 main function for K-means clustering
 """
-def K_means_main():
-    # Source directory to cluster documents from
-    source_dir = "/Users/junhoeum/Desktop/Summer_23/doc_clustering_algo/test_document_3_27_23/test_sample"
-
+def K_means_main(source_dir):
     # Initialize document_clf object
     cluster_object = document_clf(source_dir)
 
@@ -37,10 +34,7 @@ def K_means_main():
     #After inertia decrease point from elbow method, set new num of clusters and get the wordcloud
     plot_k_means(cluster_object.tf_idf_matrix,cluster_object.term, source_dir, cluster_count)
 
-def heap_main():
-    # Source directory to cluster documents from
-    source_dir = "/Users/junhoeum/Desktop/Summer_23/doc_clustering_algo/test_document_3_27_23/test_sample"
-
+def heap_main(source_dir):
     # Initialize document_clf object
     cluster_object = document_clf(source_dir)
 
