@@ -120,13 +120,3 @@ def get_combined_token_dict(file_path):
         token_dict[key] = preprocess_text(value)
 
     return token_dict
-
-
-if __name__ == "__main__":
-    file_path = "/Users/junhoeum/Desktop/Summer_23/doc_clustering_algo/test_document_3_27_23/test_sample"
-    combined_dict = get_combined_token_dict(file_path)
-    # feature_names = rename_pdf_files(file_path)
-    # print(len(feature_names))
-
-
-    
