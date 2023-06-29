@@ -47,6 +47,6 @@ def heap_main(source_dir):
     draw_best_heap(best_heap)
 
 if __name__ == "__main__":
-    source_dir = "Your_Source_path"
+    source_dir = "/Users/junhoeum/Desktop/Summer_23/doc_clustering_algo/test_document_3_27_23/test_sample"
     K_means_main(source_dir)
     heap_main(source_dir)
