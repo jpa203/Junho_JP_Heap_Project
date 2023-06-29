@@ -18,6 +18,7 @@ def read_docx_tf_idf(source_dir):
     token_lst = []
     stop_words = set(stopwords.words('english'))
     # Loop through each file in the directory and extract its text content
+    print("Top 5 keywords for each document")
     for file_name in docx_files:
         if file_name.endswith(".docx"):
             # Get the full path of the file
