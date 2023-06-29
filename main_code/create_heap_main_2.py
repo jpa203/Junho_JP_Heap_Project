@@ -80,3 +80,34 @@ class document_clf:
             
 
         return best_heap
+
+    def get_heap_lst(self):
+        #The function returns the list of heaps, where each heap represents a cluster of documents. The length of this list is the number of clusters formed by this algorithm.
+        #creating a list of heaps where each heap represents a cluster of documents 
+        #based on their cosine similarities in the term-frequency inverse document frequency (TF-IDF) vector space
+        self.create_tf_idf_matrix()
+        self.get_document_names()
+
+        print(self.documents)
+        k = 15
+        threshold = 0.2
+        j = 0
+        best_heaps = []  
+
+        while j < len(self.documents):
+            file_name_lst = self.documents[j:len(self.documents)]
+            heap = [(1, self.tf_idf_vectors[j], 1, file_name_lst[0])]
+            for i in range(j+1, self.tf_idf_vectors.shape[0]):
+                cosine_similarities = [1 - cosine(heap_item[1].toarray()[0], self.tf_idf_vectors[i].toarray()[0]) for heap_item in heap]
+                if max(cosine_similarities) >= threshold:
+                    heap_item = (i + 1, self.tf_idf_vectors[i], max(cosine_similarities), file_name_lst[i-j])
+                    heapq.heappush(heap, heap_item)
+                    if len(heap) > k:
+                        heapq.heappop(heap)
+            if len(heap) > 2:  # Ensure that the heap has more than one sample
+                best_heaps.append(heap) 
+            j += 1
+        print(len(best_heaps))
+        return best_heaps
+
+
