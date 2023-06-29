@@ -52,4 +52,7 @@ def heap_main():
 
     draw_best_heap(best_heap)
 
-heap_main()
+if __name__ == "__main__":
+    source_dir = "Your_Source_path"
+    K_means_main(source_dir)
+    heap_main(source_dir)
