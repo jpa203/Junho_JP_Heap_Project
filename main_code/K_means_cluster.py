@@ -12,6 +12,7 @@ from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+from sklearn.metrics.pairwise import cosine_similarity
 
 """
 Enter the number of clusters you want to use
@@ -114,3 +115,4 @@ def plot_k_means(tf_idf_vectors,terms,doc_source,num_clusters):
 
         # Save the figure to a file in the output directory
         plt.savefig(os.path.join(output_dir, f"wordcloud_cluster_{i + 1}.png"))
+        
