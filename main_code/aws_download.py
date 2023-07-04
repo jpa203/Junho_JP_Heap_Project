@@ -2,15 +2,17 @@ import boto3
 import os
 
 session = boto3.Session(
-    aws_access_key_id='AKIASPKJ6RJC6Q3CVKMU',
-    aws_secret_access_key='9KcpuJcqjU+p40YbJ0qz/64Si6T52X4rp8OL/Qn0',
-    region_name='us-east-1',  # e.g., 'us-east-1'
+    aws_access_key_id='',
+    aws_secret_access_key='',
+    region_name='',  # e.g., 'us-east-1'
 )
 
 s3 = session.resource('s3')
 
-bucket_name = 'junho-heap-project'
-local_directory = '/Users/junhoeum/Desktop/experimentation'
+bucket_name = ''
+
+# Local directory to download the directory
+local_directory = ''
 
 # Download only pdf file from a specific directory from the s3 bucket
 def download_dir(bucket_name, local_dir, prefix=""):
