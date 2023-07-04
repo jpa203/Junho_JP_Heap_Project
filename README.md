@@ -1,7 +1,9 @@
 
-# Document Classifier and Heap Visualization
+# Document Classifier implemented with heap data structure
 
-This Python script creates a document classifier based on the TF-IDF (Term Frequency-Inverse Document Frequency) algorithm and visualizes heap data structures generated from document similarity using the networkx and matplotlib libraries.
+This project introduces an approach to document clustering, employing Term Frequency-Inverse Document Frequency (TF-IDF) and cosine similarity, implemented with heap data structures. This algorithm is designed to aid users in organizing documents within a directory in a computationally optimized way. By leveraging the heap data structure's average time complexity of O(log n) for insertions and deletions, we aim to improve performance when dealing with large datasets.
+
+The algorithm calculates the similarity between each document using cosine similarity and TF-IDF, powerful techniques in the text analysis field. By doing so, it can effectively group similar documents based on their content. This project serves as a guide for individuals and organizations who wish to optimize their document clustering process, thereby saving time and computational resources.
 
 
 ## Dependencies
