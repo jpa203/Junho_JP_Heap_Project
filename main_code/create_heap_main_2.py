@@ -304,7 +304,7 @@ class document_clf:
 if __name__=="__main__":
 
     # Directory containing small num of documents
-    small_source_dir = "/Users/junhoeum/Desktop/Summer_23/doc_clustering_algo/test_document_3_27_23/test_sample"
+    small_source_dir = "./test_data"
 
     cluster_object = document_clf(small_source_dir)
     
