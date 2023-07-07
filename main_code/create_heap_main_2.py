@@ -225,7 +225,6 @@ class document_clf:
             avg_cosine_similarity = np.mean(pairwise_cosine_similarities)
             avg_cosine_similarities_kmeans.append(avg_cosine_similarity)
 
-        print('Average cosine similarities of K-means clusters:', avg_cosine_similarities_kmeans)
         print("Average Cosine Similarity for K means clusters:", sum(avg_cosine_similarities_kmeans)/len(avg_cosine_similarities_kmeans))
 
 # Test heap creation and dimension reduction for silhouete score assignment later
