@@ -85,7 +85,80 @@ class document_clf:
             
 
         return best_heap
-    
+        
+    def grid_search(self, k_values):
+        # Initialize best values
+        best_k = None
+        best_heap = None
+        best_avg_sim = 0
+
+        for k in k_values:
+            # Run the function with the current value of k
+            heap = self.get_best_heap_cosine(k)
+
+            # Calculate average cosine similarity in heap
+            avg_sim = sum(item[2] for item in heap) / len(heap)
+
+            # If the new average cosine similarity is higher than the current best, update the best values
+            if avg_sim > best_avg_sim:
+                best_k = k
+                best_heap = heap
+                best_avg_sim = avg_sim
+
+        # Return the best heap and corresponding k value
+        return best_k, best_avg_sim
+
+    def get_best_heap_cosine_grid_search(self,k):
+        # Get a single best heap structure after comparing avg cosine similarity of all heap strucutures generated from this algorithm
+        # Get the list of document names
+        self.get_document_names()
+
+        file_name_lst = self.documents
+
+        # Set the number of most similar documents to return
+        k = 15
+        # Set a threshold for cosine similarity
+        threshold = 0.2
+        
+        # array to store document numbers stored by heap
+        j = 0
+        counter = 0
+        best_heap = None
+        best_heap_avg_sim = 0  # store the average similarity of the best heap
+        while j < len(self.documents):
+            # Initialize a heap data structure with the first document
+            # heap will generate relevant document according to the root document
+            file_name_lst2 = file_name_lst[j:len(self.documents)]
+            heap = [(1, self.tf_idf_vectors[j], 1, file_name_lst2[0])]
+            total_sim = 0  # to store the total similarity for this heap
+
+            # Loop through each subsequent document
+            for i in range(j+1, self.tf_idf_vectors.shape[0]):
+                # Calculate cosine similarity between the new document and each document currently in the heap
+                cosine_similarities = [1 - cosine(heap_item[1].toarray()[0], self.tf_idf_vectors[i].toarray()[0]) for heap_item in heap]
+                max_sim = max(cosine_similarities)
+
+                # Check if the cosine similarity between the new document and any document in the heap is greater than the threshold value
+                if max_sim >= threshold:
+                    # Add the new document to the heap
+                    heap_item = (i + 1, self.tf_idf_vectors[i], max_sim, file_name_lst2[i-j])
+                    heapq.heappush(heap, heap_item)
+                    total_sim += max_sim  # add the similarity to the total
+
+                    # Remove the document with the lowest cosine similarity if the heap is full
+                    if len(heap) > k:
+                        removed_item = heapq.heappop(heap)
+                        total_sim -= removed_item[2]  # subtract the similarity of the removed item from the total
+
+            # check if this heap has higher average cosine similarity than the current best heap
+            heap_avg_sim = total_sim / len(heap) if len(heap) else 0
+            if heap_avg_sim > best_heap_avg_sim:
+                best_heap = heap
+                best_heap_avg_sim = heap_avg_sim
+
+            j += 1
+        return best_heap
+        
     def get_best_heap_cosine(self):
         # Get a single best heap structure after comparing avg cosine similarity of all heap strucutures generated from this algorithm
         # Get the list of document names
