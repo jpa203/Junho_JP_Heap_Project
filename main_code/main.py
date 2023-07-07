@@ -99,16 +99,16 @@ if __name__ == "__main__":
     source_dir = "./test_data"
 
     # main function to run the code
-    # K_means_main(source_dir)
-    # heap_main(source_dir)
+    K_means_main(source_dir)
+    heap_main(source_dir)
 
     # main function for time complexity analysis
-    kmeans_result = main_Kmeans_algo_time_test(source_dir)
-    best_heap_cluster = main_heap_algo_time_test(source_dir)
+    # kmeans_result = main_Kmeans_algo_time_test(source_dir)
+    # best_heap_cluster = main_heap_algo_time_test(source_dir)
     
     # Dictionary mapped with cluster number and documents
-    print(kmeans_result)
-    draw_best_heap(best_heap_cluster)
+    # print(kmeans_result)
+    # draw_best_heap(best_heap_cluster)
 
 
 
