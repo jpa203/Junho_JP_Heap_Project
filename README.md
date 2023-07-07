@@ -148,7 +148,7 @@ Note: The script does not build or manage the heap data structure. It is assumed
 
 ![1 Clusters Word Cloud](./main_code/word_cloud_figures/cluster3_wordcloud.png)
 
-    - This interactive approach allows you to explore different cluster quantities and their respective inertia, helping you select the number of clusters that minimizes inertia and optimizes the clustering process. Note: Elbow method is a heuristic method of interpretation and visualization of the explained variation as a function of the number of clusters. You'll need to interpret the plot to choose the "elbow point," the point of inflection on the curve.
+- This interactive approach allows you to explore different cluster quantities and their respective inertia, helping you select the number of clusters that minimizes inertia and optimizes the clustering process. Note: Elbow method is a heuristic method of interpretation and visualization of the explained variation as a function of the number of clusters. You'll need to interpret the plot to choose the "elbow point," the point of inflection on the curve.
 
 
 ### Output
