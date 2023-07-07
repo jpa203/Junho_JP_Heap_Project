@@ -1,4 +1,4 @@
-from create_heap_main_2 import document_clf
+from document_clf import document_clf
 import warnings
 warnings.filterwarnings('ignore')
 from matplotlib.axes._axes import _log as matplotlib_axes_logger
@@ -89,6 +89,7 @@ def main_Kmeans_algo_time_test(source_dir):
     cluster_labels = kmeans.predict(cluster_object.tf_idf_matrix)
 
     doc_label_dict = dict()
+
     for i in range(len(doc_lst)):
         # Assign labels to each document based on cluster labels
         doc_label_dict[doc_lst[i]] = cluster_labels[i]
