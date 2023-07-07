@@ -59,6 +59,8 @@ def heap_main(source_dir):
 
     print("silhouete coeff score:",silhouete_score)
 
+    return best_single_heap
+
 # Main function for emprical time complexity test
 def main_heap_algo_time_test(source_dir):
     # Initialize document_clf object
