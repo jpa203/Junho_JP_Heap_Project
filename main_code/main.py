@@ -96,7 +96,7 @@ def main_Kmeans_algo_time_test(source_dir):
     return doc_label_dict
 
 if __name__ == "__main__":
-    source_dir = "SOURCE_DIRECTORY_PATH"
+    source_dir = "./test_data"
 
     # main function to run the code
     # K_means_main(source_dir)
