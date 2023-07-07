@@ -33,7 +33,7 @@ pip install matplotlib networkx scipy nltk sklearn
 
 5. To run the script, navigate to the directory containing the script and use the following command in the terminal:
 ```
-python3 document_classification.py
+python3 main.py
 ```
 
 
