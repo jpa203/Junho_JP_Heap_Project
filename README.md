@@ -124,7 +124,23 @@ Note: The script does not build or manage the heap data structure. It is assumed
     - extract_topic_pdf(pdf_token, num_topics=3): This function works similarly to extract_topic_docx but operates on preprocessed text data from PDF files. It transforms the provided text data into a TF-IDF matrix, applies LSA, and then extracts the specified number of topics (default is 3). The function then prints out the top 7 words for each topic. Additionally, it returns the top words from each topic combined with underscores, which could be used for renaming the processed PDF files based on their topics.
 
     - These two functions enable us to perform topic modeling on our document corpus, providing insights into the main themes present in our data. The number of topics and the number of top words to display for each topic can be adjusted based on your specific needs.
- 
+
+### User Input for K-means Clustering 
+- User input part of the script, which is designed to determine the optimal number of clusters to be used in K-means clustering. This is done using the Elbow method, which involves plotting the explained variation as a function of the number of clusters, and picking the elbow of the curve as the number of clusters to use.
+  
+    - How many clusters do you want to use?: The script first prompts you with this question. Your response should be a positive integer. This number represents the number of clusters ("k") you want to compute inertia for. For example, if you want to compute inertia for two clusters, you'd enter 2.
+
+    - Inertia Computation and Plotting: After you provide your input, the script computes the inertia for each value of "k" from 1 up to the number you entered. Inertia, or the within-cluster sum of squares criterion, can be recognized as a measure of how internally coherent clusters are. The script will also generate a plot of the explained variation as a function of the number of clusters. The inertia for each value of "k" is then displayed as Intertia for k = x: y, where x is the number of clusters and y is the calculated inertia.
+
+    - Repeat Process: You are then asked again for the number of clusters to use. This allows you to compute inertia for different numbers of clusters and see the plot for each scenario. For instance, if you initially input 2 and then input 3, the script will compute and display the inertia for 1, 2, and then 3 clusters, updating the plot each time.
+
+    - Exit and Selection: If you want to stop the process and proceed with the clustering, you enter 0. The script will use the last number you entered before 0 as the number of clusters for K-means clustering. For instance, if you input 2, then 3, and finally 0, the script will proceed with K-means clustering using 3 clusters.
+
+    - Keyword Word Cloud Generation: After determining the optimal number of clusters, the plot_k_means() function will generate a word cloud. This word cloud comprises the top keywords of each cluster, providing a quick and intuitive visualization of the main topics in each cluster.
+
+    - This interactive approach allows you to explore different cluster quantities and their respective inertia, helping you select the number of clusters that minimizes inertia and optimizes the clustering process. Note: Elbow method is a heuristic method of interpretation and visualization of the explained variation as a function of the number of clusters. You'll need to interpret the plot to choose the "elbow point," the point of inflection on the curve.
+
+
 ### Output
 - The output is comprised of multiple elements. Here is an overview:
 
