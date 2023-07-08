@@ -30,9 +30,28 @@ pip install matplotlib networkx scipy nltk sklearn
 3. You will need the modules draw_heap, pdf_reader, document_clf, lsa, main, and K_means_cluster to be located in your Python path or the same directory.
 
 4. Run main.py file with the provided test_data within the repository. If it is run without any error, change the ‘source_dir’ to your source directory to be clustered and run the main.py again.
-```
-python3 main.py
-```
+    ```
+    python3 main.py
+    ```
+5. After you have run the main.py file, the script will ask for your input via the terminal for the number of clusters you want to use for document clustering. You can input this as an integer. For example:
+    ```
+    how many clusters do you want to use?: Press 0 to exit: 0
+    ```
+If you are unsure of the optimal number of clusters to use, simply enter a range of numbers to be clustered. The script will then generate a plot and print the inertia value for each number of clusters, like so:
+    ```
+    Intertia for k = 1: 0.003328
+    Intertia for k = 2: 0.003160
+    Intertia for k = 3: 0.002931
+
+    Intertia for k = 4: 0.002753
+
+    ```
+![user_input_2](https://github.com/jpa203/Junho_JP_Heap_Project/assets/74083204/1ba4bf99-c2ff-414f-b7d1-6f257ef23069)
+![user_input_1](https://github.com/jpa203/Junho_JP_Heap_Project/assets/74083204/0d4e408a-3943-425b-935e-46432279cb99)
+
+These are the results of the elbow method for determining the optimal number of clusters. The inertia is a measure of how internally coherent clusters are. It decreases with an increase in k. However, the rate of decrease slows at some point forming an elbow shape in the plot. The optimal number of clusters is typically chosen at this point (the elbow point). So, observe the output values, check where the inertia value decreases significantly, indicating that the number of clusters (k) is optimal.
+
+After you have determined the optimal number of clusters, rerun the main.py file and enter this optimal number when prompted.
 
 ## Output
 - The output is comprised of multiple elements. Here is an overview:
@@ -54,7 +73,13 @@ python3 main.py
 ## Expected Output
 An example of expected output would look like this:
 ```
-Topic Words: 'august', 'season', 'average', 'slugging', 'home', 'last', 'surge'
+Topic words: ai,fairness,equal,gender,treatment,product,model
+Topic words: ai,fairness,layer,data,model,bias,system
+Topic words: ai,game,interaction,player,human,design,play
+Topic words: ai,game,learning,harm,card,business,feature
+Topic words: ai,game,strategy,player,superhuman,every,human
+Topic words: classification,ocular,trauma,globe,injury,system,eye
+Topic words: end,movie,service,cloud,latency,streaming,load
 
 Average Cosine Similarity of the Best Heap: 0.89
 
