@@ -47,7 +47,6 @@ If you are unsure of the optimal number of clusters to use, simply enter a range
 
 ![user_input_1](https://github.com/jpa203/Junho_JP_Heap_Project/assets/74083204/0d4e408a-3943-425b-935e-46432279cb99)
 ![user_input_2](https://github.com/jpa203/Junho_JP_Heap_Project/assets/74083204/1ba4bf99-c2ff-414f-b7d1-6f257ef23069)
-![Screenshot 2023-07-08 at 4 52 23 PM](https://github.com/jpa203/Junho_JP_Heap_Project/assets/74083204/52b2aa25-9217-487e-9e4b-6078a6a2373b)
 
 These are the results of the elbow method for determining the optimal number of clusters. The inertia is a measure of how internally coherent clusters are. It decreases with an increase in k. However, the rate of decrease slows at some point forming an elbow shape in the plot. The optimal number of clusters is typically chosen at this point (the elbow point). So, observe the output values, check where the inertia value decreases significantly, indicating that the number of clusters (k) is optimal.
 
@@ -121,6 +120,7 @@ silhouete coeff score:: 0.65
 ```
 - ![1 Clusters Word Cloud](./main_code/word_cloud_figures/cluster2_wordcloud.png)
 - ![1 Clusters Word Cloud](./main_code/word_cloud_figures/cluster3_wordcloud.png)
+- ![Screenshot 2023-07-08 at 4 52 23 PM](https://github.com/jpa203/Junho_JP_Heap_Project/assets/74083204/52b2aa25-9217-487e-9e4b-6078a6a2373b)
 
 ## Additional Information
 - The document_clf class handles the main functionality. It takes in a source directory of documents and constructs a TF-IDF matrix. This matrix is then used to calculate cosine similarities between documents and form heaps based on these similarities. It can also generate and plot an elbow graph for K-means clustering.
