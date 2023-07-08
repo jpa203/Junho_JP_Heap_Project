@@ -174,7 +174,7 @@ Note: The script does not build or manage the heap data structure. It is assumed
 
     - These two functions enable us to perform topic modeling on our document corpus, providing insights into the main themes present in our data. The number of topics and the number of top words to display for each topic can be adjusted based on your specific needs.
 
-### Hyperparameter Tuning
+## Hyperparameter Tuning
 - The grid_search function has been incorporated into the algorithm to optimize the performance of the document classifier. This function takes in a range of potential k values (the number of documents to return for a single heap structure), and finds the one that provides the highest average cosine similarity in the heap.
 
 - The optimal k value signifies the number of most similar documents that the algorithm should return. The selection of the range of k values to test in the grid search is a critical step, and it can significantly impact the performance of the classifier.
