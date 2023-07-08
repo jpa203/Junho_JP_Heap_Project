@@ -50,8 +50,10 @@ If you are unsure of the optimal number of clusters to use, simply enter a range
 
 These are the results of the elbow method for determining the optimal number of clusters. The inertia is a measure of how internally coherent clusters are. It decreases with an increase in k. However, the rate of decrease slows at some point forming an elbow shape in the plot. The optimal number of clusters is typically chosen at this point (the elbow point). So, observe the output values, check where the inertia value decreases significantly, indicating that the number of clusters (k) is optimal.
 
-After you have determined the optimal number of clusters, rerun the main.py file and enter this optimal number when prompted.
+After you have determined the optimal number of clusters, enter this optimal number when prompted.
 
+6. Once you've input the number of clusters for your document analysis, the program will also generate a WordCloud image for each of these clusters.
+   
 ## Output
 - The output is comprised of multiple elements. Here is an overview:
 
