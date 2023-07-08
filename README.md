@@ -79,11 +79,12 @@ Topic words: ai,game,learning,harm,card,business,feature
 Topic words: ai,game,strategy,player,superhuman,every,human
 Topic words: classification,ocular,trauma,globe,injury,system,eye
 Topic words: end,movie,service,cloud,latency,streaming,load
+...
 
-Average Cosine Similarity of the Best Heap: 0.89
+Average cosine similarity of the best heap: 0.6683963103188834
+Average Cosine Similarity for K means clusters: 0.3572087055856158
 
 Best Heap:
-
 
 [
 (10, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1740 stored elements in Compressed Sparse Row format>, 0.79, 'attendance_strike_effects_variable_price_year_season.pdf'),
@@ -100,7 +101,7 @@ Matrix of Data Points:
  ...
 ]
 
-Silhouette Score: 0.65
+silhouete coeff score:: 0.65
 ```
 
 ## Additional Information
