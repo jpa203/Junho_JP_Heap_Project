@@ -117,6 +117,9 @@ if __name__ == "__main__":
 
     # main function to run the code
     # TODO: Run this code and check for the input error
+    """
+    Check elbow_method_test() in K_means_cluster.py which includes tkinter library
+    """
     test_k_means_main(source_dir)
     #heap_main(source_dir)
 
