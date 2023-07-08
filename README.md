@@ -69,8 +69,6 @@ After you have determined the optimal number of clusters, enter this optimal num
         ```
         - For example: (1, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1740 stored elements in Compressed Sparse Row format>, 1, 'attendance_strike_effects_variable_price_year_season.pdf')
 
-    - Matrix of Data Points: This two-dimensional array corresponds to the data points of the documents in a two-dimensional space. Each array corresponds to a single document, with the two elements in each array being the x and y coordinates of the document in the two-dimensional space.
-
     - Silhouette Score: This is a measure of how similar an object is to its own cluster compared to other clusters. The silhouette scores range from -1 to 1, where a high value indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters.
  
     - WordCloud Image: size of each word in the WordCloud will correspond to its frequency within the cluster. The more frequent a word, the larger it will appear in the WordCloud. The WordCloud is an additional tool to help you visualize the key terms or themes in your documents. It doesn't replace the quantitative measures provided in the output, such as the Average Cosine Similarity, the Silhouette Score, or the Matrix of Data Points. Rather, it complements these measures by providing a qualitative perspective.
@@ -119,15 +117,6 @@ Best Heap:
 (10, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1740 stored elements in Compressed Sparse Row format>, 0.79, 'attendance_strike_effects_variable_price_year_season.pdf'),
 (33, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1563 stored elements in Compressed Sparse Row format>, 0.85, 'second_base_positions_effects_average.pdf'),
 ...
-]
-________________________________________________________
-Matrix of Data Points:
-
-
-[[0.5, 0.7], 
- [0.1, 0.4], 
- [0.3, 0.8], 
- ...
 ]
 ________________________________________________________
 silhouete coeff score:: 0.65
