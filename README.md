@@ -70,6 +70,9 @@ After you have determined the optimal number of clusters, enter this optimal num
     - Matrix of Data Points: This two-dimensional array corresponds to the data points of the documents in a two-dimensional space. Each array corresponds to a single document, with the two elements in each array being the x and y coordinates of the document in the two-dimensional space.
 
     - Silhouette Score: This is a measure of how similar an object is to its own cluster compared to other clusters. The silhouette scores range from -1 to 1, where a high value indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters.
+ 
+    - WordCloud Image: size of each word in the WordCloud will correspond to its frequency within the cluster. The more frequent a word, the larger it will appear in the WordCloud. The WordCloud is an additional tool to help you visualize the key terms or themes in your documents. It doesn't replace the quantitative measures provided in the output, such as the Average Cosine Similarity, the Silhouette Score, or the Matrix of Data Points. Rather, it complements these measures by providing a qualitative perspective.
+By using these different components together, you should have a comprehensive understanding of the clusters in your documents.
 
 ## Expected Output
 An example of expected output would look like this:
@@ -105,6 +108,8 @@ Matrix of Data Points:
 
 silhouete coeff score:: 0.65
 ```
+- ![1 Clusters Word Cloud](./main_code/word_cloud_figures/cluster2_wordcloud.png)
+- ![1 Clusters Word Cloud](./main_code/word_cloud_figures/cluster3_wordcloud.png)
 
 ## Additional Information
 - The document_clf class handles the main functionality. It takes in a source directory of documents and constructs a TF-IDF matrix. This matrix is then used to calculate cosine similarities between documents and form heaps based on these similarities. It can also generate and plot an elbow graph for K-means clustering.
