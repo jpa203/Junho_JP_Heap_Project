@@ -51,33 +51,33 @@ python3 main.py
 
     - Silhouette Score: This is a measure of how similar an object is to its own cluster compared to other clusters. The silhouette scores range from -1 to 1, where a high value indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters.
 
-###Expected Output
+##Expected Output
 An example of expected output would look like this:
-
+```
 Topic Words: 'august', 'season', 'average', 'slugging', 'home', 'last', 'surge'
 
 Average Cosine Similarity of the Best Heap: 0.89
 
 Best Heap:
 
-```
+
 [
 (10, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1740 stored elements in Compressed Sparse Row format>, 0.79, 'attendance_strike_effects_variable_price_year_season.pdf'),
 (33, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1563 stored elements in Compressed Sparse Row format>, 0.85, 'second_base_positions_effects_average.pdf'),
 ...
 ]
-```
+
 Matrix of Data Points:
 
-```
+
 [[0.5, 0.7], 
  [0.1, 0.4], 
  [0.3, 0.8], 
  ...
 ]
-```
-Silhouette Score: 0.65
 
+Silhouette Score: 0.65
+```
 
 ## Additional Information
 - The document_clf class handles the main functionality. It takes in a source directory of documents and constructs a TF-IDF matrix. This matrix is then used to calculate cosine similarities between documents and form heaps based on these similarities. It can also generate and plot an elbow graph for K-means clustering.
