@@ -58,7 +58,9 @@ After you have determined the optimal number of clusters, enter this optimal num
 - The output is comprised of multiple elements. Here is an overview:
 
     - Topic Words: These are the key terms or keywords that define a particular topic. They are identified based on the frequency and relevance in the documents being analyzed. For instance, "august, season, average, slugging, home, last, surge" and "award, position, gold, player, may, defensive, model" are the topic words for two documents.
-      
+
+    - Topic keywords from K means clustering: K-means clustering is applied to the dataset, and each cluster's topic words are identified. These words represent the central theme or topics within each cluster and are derived from the frequency and relevance of the words in the documents within the respective cluster.
+ 
     - Average cosine similarity of the best heap: This is a measure of the average similarity between the documents in the best heap. A heap in this context is a collection of documents. Cosine similarity is a metric used to determine how similar two documents are irrespective of their size.
       
     - Best Heap: This contains tuples of document indices, the document's vector representation (in sparse matrix format), the cosine similarity of the document with the centroid of its cluster, and the name of the document. Each tuple corresponds to a document in the dataset.
