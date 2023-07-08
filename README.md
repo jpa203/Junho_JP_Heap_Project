@@ -51,7 +51,7 @@ python3 main.py
 
     - Silhouette Score: This is a measure of how similar an object is to its own cluster compared to other clusters. The silhouette scores range from -1 to 1, where a high value indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters.
 
-##Expected Output
+## Expected Output
 An example of expected output would look like this:
 ```
 Topic Words: 'august', 'season', 'average', 'slugging', 'home', 'last', 'surge'
