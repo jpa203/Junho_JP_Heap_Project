@@ -23,7 +23,7 @@ The algorithm calculates the similarity between each document using cosine simil
 ## Instructions
 1. Install all the required dependencies. You can use pip to install these packages. For example:
 ```
-pip install matplotlib networkx scipy nltk sklearn 
+pip install matplotlib networkx scipy nltk sklearn PyPDF2 wordcloud
 ```
 2. Clone or download this repository to your local machine.
 
@@ -114,11 +114,7 @@ silhouete coeff score:: 0.65
 ## Additional Information
 - The document_clf class handles the main functionality. It takes in a source directory of documents and constructs a TF-IDF matrix. This matrix is then used to calculate cosine similarities between documents and form heaps based on these similarities. It can also generate and plot an elbow graph for K-means clustering.
 
-- The create_tf_idf_matrix method constructs the TF-IDF matrix using the sklearn's TfidfVectorizer.
-
 - The get_document_names method extracts all the document names from the source directory.
-
-- The draw_every_heap method constructs heaps for every document, visualizes each heap, and returns the "best" heap (the one that covers the most documents).
 
 - The get_heap method is similar to draw_every_heap but does not produce visualizations for each heap.
 
@@ -150,31 +146,27 @@ Note: The script does not build or manage the heap data structure. It is assumed
   
 - Non-English words and words not in the NLTK words corpus are filtered out during preprocessing.
 
-### K_means_cluster
+## K_means_cluster
 - This Python script implements K-Means clustering on a collection of documents represented in a TF-IDF matrix, identifying optimal cluster count using the Elbow method and visualizing results using word clouds.
-- Instructions
-    - Install all the required dependencies. You can use pip to install these packages. For example:
-        ```
-        pip install numpy matplotlib sklearn wordcloud
-        ```
-    - The scripts require a TF-IDF matrix and a list of corresponding document names as inputs. Replace the placeholders in the main function with your data.
-- Additional Information
-    - The elbow_method() function calculates and plots the sum of squared distances (inertia) for K values in a specified range. This is used to identify the optimal K (number of clusters) for K-Means clustering.
-    - The K_means_cluster() function performs K-Means clustering on the input TF-IDF matrix and returns a dictionary mapping document names to their respective cluster labels.
-    - The plot_k_means() function performs K-Means clustering and visualizes the top terms in each cluster with word clouds.
+  
+- The K_means_cluster() function performs K-Means clustering on the input TF-IDF matrix and returns a dictionary mapping document names to their respective cluster labels.
+  
+- The plot_k_means() function performs K-Means clustering and visualizes the top terms in each cluster with word clouds.
 
-### read_docx_tf_idf
+## read_docx_tf_idf
 
 - This script performs text extraction, tokenization, and cleaning of .docx files. It removes stopwords and non-alphabetic words from the text.
-- The function read_docx_tf_idf2() reads the .docx files, extracts and cleans the text content, and finally stores the cleaned text in a dictionary.
+  
+- The function read_docx_tf_idf() reads the .docx files, extracts and cleans the text content, and finally stores the cleaned text in a dictionary.
+  
 - The dictionary contains the filename as the key and its cleaned text as the value.
+  
 - This script requires a directory of .docx files to be processed. Replace source_dir in the main function with the path to your directory.
 
-### LSA
+## LSA
 - Extracting Topics from Documents
-    - Our script includes two functions, extract_topic_docx(source_dir, num_topics=3) and extract_topic_pdf(pdf_token, num_topics=3), that leverage Latent Semantic Analysis (LSA) to extract topics from the preprocessed DOCX and PDF files respectively.
-
-- Instructions
+- Script includes two functions, extract_topic_docx(source_dir, num_topics=3) and extract_topic_pdf(pdf_token, num_topics=3), that leverage Latent Semantic Analysis (LSA) to extract topics from the preprocessed DOCX and PDF files respectively.
+- Extracted topic keywords are then used to rename files.
 
     - extract_topic_docx(source_dir, num_topics=3): This function reads the preprocessed DOCX files from the source directory using the read_docx_tf_idf function. The resulting list of preprocessed text data is then transformed into a TF-IDF matrix using TfidfVectorizer. LSA is applied to this matrix using the TruncatedSVD function from sklearn, specifying the number of topics to extract (default is 3). The function then prints out the top 5 words for each topic, giving us an idea of the main themes in the DOCX files.
 
