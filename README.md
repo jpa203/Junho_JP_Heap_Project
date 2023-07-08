@@ -96,9 +96,21 @@ Topic words: classification,ocular,trauma,globe,injury,system,eye
 Topic words: end,movie,service,cloud,latency,streaming,load
 ...
 
+___________________________
+Topic keywords from K means clustering: 
+-----------------------
+Cluster 0:
+speed ball sports baseball stadium sport spin batting trauma ban
+Cluster 1:
+ai fairness model disease progression layer data bias filter learning
+Cluster 2:
+ai game player adnexal ocular interaction foreign learning trauma human
+Cluster 3:
+service cloud performance simulator load resilience architecture circuit ocular movie
+_______________________________________________________
 Average cosine similarity of the best heap: 0.6683963103188834
 Average Cosine Similarity for K means clusters: 0.3572087055856158
-
+________________________________________________________
 Best Heap:
 
 [
@@ -106,7 +118,7 @@ Best Heap:
 (33, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1563 stored elements in Compressed Sparse Row format>, 0.85, 'second_base_positions_effects_average.pdf'),
 ...
 ]
-
+________________________________________________________
 Matrix of Data Points:
 
 
@@ -115,7 +127,7 @@ Matrix of Data Points:
  [0.3, 0.8], 
  ...
 ]
-
+________________________________________________________
 silhouete coeff score:: 0.65
 ```
 - ![1 Clusters Word Cloud](./main_code/word_cloud_figures/cluster2_wordcloud.png)
