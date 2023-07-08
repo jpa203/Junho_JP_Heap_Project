@@ -27,11 +27,9 @@ pip install matplotlib networkx scipy nltk sklearn
 ```
 2. Clone or download this repository to your local machine.
 
-3. You will need the modules draw_heap, pdf_reader, and K_means_cluster to be located in your Python path or the same directory.
+3. You will need the modules draw_heap, pdf_reader, document_clf, lsa, main, and K_means_cluster to be located in your Python path or the same directory.
 
-4. Update the source_dir and small_source_dir in the main function with the directory of your documents.
-
-5. To run the script, navigate to the directory containing the script and use the following command in the terminal:
+4. Run main.py file with the provided test_data within the repository. If it is run without any error, change the ‘source_dir’ to your source directory to be clustered and run the main.py again.
 ```
 python3 main.py
 ```
