@@ -78,7 +78,6 @@ By using these different components together, you should have a comprehensive un
       
     - This visualization is designed to give you an intuitive understanding of the relationships between the documents based on their cosine similarity. The root of the heap represents the document that is most similar to others, based on the average cosine similarity. Each subsequent level of the heap represents documents that are less similar to the rest of the data set.
       
-    - Here's how it works:
         - Heap Structure: The heap structure is a binary tree, with the root representing the document with the highest average cosine similarity to the other documents. Each subsequent level of the tree represents documents with decreasing similarity.
 
         - Node Details: Each node in the tree will display the name of the document.
