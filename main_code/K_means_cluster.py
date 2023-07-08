@@ -70,7 +70,67 @@ def elbow_method(tf_idf_matrix):
                 plt.title('The Elbow Method using Inertia')
                 plt.show()
         return num_of_clusters
+    
+# This is the elbow method to be fixed
+def elbow_method_test(tf_idf_matrix):
+    cluster_count_lst = []
+    
+    while True:
+        # Create a Tk root widget
+        root = Tk()
+        root.withdraw() # Hide the main window 
 
+        # Ask user for number of clusters
+        num_of_clusters = simpledialog.askinteger("Input", "How many clusters do you want to use?: Press 0 to exit:",
+                                                minvalue=0)
+        root.destroy()
+
+        print("___________________________")
+        cluster_count_lst.append(num_of_clusters)
+
+        if num_of_clusters < 0:
+            print("Please enter a valid number of clusters")
+        if num_of_clusters == 0:
+            num_of_clusters = cluster_count_lst[-2]
+            break
+        else:
+            # Initialize lists and mappings for distortions and inertias
+            distortions = []
+            inertias = []
+            mapping1 = {}
+            mapping2 = {}
+            
+            # Define range of k-values
+            K = range(1, num_of_clusters + 1)
+
+            # Loop through each value of k and fit the model
+            for k in K:
+                kmeanModel = KMeans(n_clusters=k).fit(tf_idf_matrix)
+                kmeanModel.fit(tf_idf_matrix)
+
+                # Calculate distortions and inertias and store in lists
+                distortions.append(sum(np.min(cdist(tf_idf_matrix, kmeanModel.cluster_centers_,
+                                                    'euclidean'), axis=1)) / len(tf_idf_matrix[0]))
+                inertias.append(kmeanModel.inertia_)
+
+                # Store distortions and inertias in mappings
+                mapping1[k] = sum(np.min(cdist(tf_idf_matrix, kmeanModel.cluster_centers_,
+                                            'euclidean'), axis=1)) / len(tf_idf_matrix[0])
+                mapping2[k] = kmeanModel.inertia_
+
+            # Print out the distortions for each value of k
+            for key, val in mapping1.items():
+                print("Intertia for k = %d: %f" % (key, val))
+
+            # Plot the elbow curve
+            plt.plot(K, distortions, 'bx-')
+            plt.xlabel('Values of K')
+            plt.ylabel('Inertia')
+            plt.title('The Elbow Method using Inertia')
+            plt.show()
+
+    return num_of_clusters
+    
 def K_means_cluster(tf_idf_matrix,doc_lst,num_clusters=4):
     # after finding the best number of clusters, use K-means clustering
     kmeans = KMeans(n_clusters=num_clusters, random_state=23)
