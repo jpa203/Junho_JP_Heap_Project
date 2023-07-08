@@ -34,6 +34,50 @@ pip install matplotlib networkx scipy nltk sklearn
 python3 main.py
 ```
 
+## Output
+- The output is comprised of multiple elements. Here is an overview:
+
+    - Topic Words: These are the key terms or keywords that define a particular topic. They are identified based on the frequency and relevance in the documents being analyzed. For instance, "august, season, average, slugging, home, last, surge" and "award, position, gold, player, may, defensive, model" are the topic words for two documents.
+      
+    - Average cosine similarity of the best heap: This is a measure of the average similarity between the documents in the best heap. A heap in this context is a collection of documents. Cosine similarity is a metric used to determine how similar two documents are irrespective of their size.
+      
+    - Best Heap: This contains tuples of document indices, the document's vector representation (in sparse matrix format), the cosine similarity of the document with the centroid of its cluster, and the name of the document. Each tuple corresponds to a document in the dataset.
+        ```
+        (document_index, document_vector_representation, cosine_similarity, document_name)
+        ```
+        - For example: (1, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1740 stored elements in Compressed Sparse Row format>, 1, 'attendance_strike_effects_variable_price_year_season.pdf')
+
+    - Matrix of Data Points: This two-dimensional array corresponds to the data points of the documents in a two-dimensional space. Each array corresponds to a single document, with the two elements in each array being the x and y coordinates of the document in the two-dimensional space.
+
+    - Silhouette Score: This is a measure of how similar an object is to its own cluster compared to other clusters. The silhouette scores range from -1 to 1, where a high value indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters.
+
+###Expected Output
+An example of expected output would look like this:
+
+Topic Words: 'august', 'season', 'average', 'slugging', 'home', 'last', 'surge'
+
+Average Cosine Similarity of the Best Heap: 0.89
+
+Best Heap:
+
+```
+[
+(10, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1740 stored elements in Compressed Sparse Row format>, 0.79, 'attendance_strike_effects_variable_price_year_season.pdf'),
+(33, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1563 stored elements in Compressed Sparse Row format>, 0.85, 'second_base_positions_effects_average.pdf'),
+...
+]
+```
+Matrix of Data Points:
+
+```
+[[0.5, 0.7], 
+ [0.1, 0.4], 
+ [0.3, 0.8], 
+ ...
+]
+```
+Silhouette Score: 0.65
+
 
 ## Additional Information
 - The document_clf class handles the main functionality. It takes in a source directory of documents and constructs a TF-IDF matrix. This matrix is then used to calculate cosine similarities between documents and form heaps based on these similarities. It can also generate and plot an elbow graph for K-means clustering.
@@ -51,6 +95,7 @@ python3 main.py
 Note: Please adjust the threshold and k values (the number of most similar documents to return) according to your specific use case in the get_heap and draw_every_heap methods. The threshold is currently set to 0.2 and k to 15.
 
 This script assumes that the documents to be analyzed are in PDF and docx format. Please ensure that the pdf_reader module functions pdf_to_text, read_pdf_tf_idf, and get_combined_token_dict are able to read your documents.
+
 ### Draw_Heap
 Instructions
 
@@ -172,20 +217,5 @@ Note: The script does not build or manage the heap data structure. It is assumed
 - This interactive approach allows you to explore different cluster quantities and their respective inertia, helping you select the number of clusters that minimizes inertia and optimizes the clustering process. Note: Elbow method is a heuristic method of interpretation and visualization of the explained variation as a function of the number of clusters. You'll need to interpret the plot to choose the "elbow point," the point of inflection on the curve.
 
 
-### Output
-- The output is comprised of multiple elements. Here is an overview:
 
-    - Topic Words: These are the key terms or keywords that define a particular topic. They are identified based on the frequency and relevance in the documents being analyzed. For instance, "august, season, average, slugging, home, last, surge" and "award, position, gold, player, may, defensive, model" are the topic words for two documents.
-      
-    - Average cosine similarity of the best heap: This is a measure of the average similarity between the documents in the best heap. A heap in this context is a collection of documents. Cosine similarity is a metric used to determine how similar two documents are irrespective of their size.
-      
-    - Best Heap: This contains tuples of document indices, the document's vector representation (in sparse matrix format), the cosine similarity of the document with the centroid of its cluster, and the name of the document. Each tuple corresponds to a document in the dataset.
-        ```
-        (document_index, document_vector_representation, cosine_similarity, document_name)
-        ```
-        - For example: (1, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1740 stored elements in Compressed Sparse Row format>, 1, 'attendance_strike_effects_variable_price_year_season.pdf')
-
-    - Matrix of Data Points: This two-dimensional array corresponds to the data points of the documents in a two-dimensional space. Each array corresponds to a single document, with the two elements in each array being the x and y coordinates of the document in the two-dimensional space.
-
-    - Silhouette Score: This is a measure of how similar an object is to its own cluster compared to other clusters. The silhouette scores range from -1 to 1, where a high value indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters.
 
