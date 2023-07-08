@@ -57,7 +57,7 @@ After you have determined the optimal number of clusters, enter this optimal num
 ## Output
 - The output is comprised of multiple elements. Here is an overview:
 
-    - Topic Words: These are the key terms or keywords that define a particular topic. They are identified based on the frequency and relevance in the documents being analyzed. For instance, "august, season, average, slugging, home, last, surge" and "award, position, gold, player, may, defensive, model" are the topic words for two documents.
+    - **Topic Words**: These are the key terms or keywords that define a particular topic. They are identified based on the frequency and relevance in the documents being analyzed. For instance, "august, season, average, slugging, home, last, surge" and "award, position, gold, player, may, defensive, model" are the topic words for two documents.
 
     - Topic keywords from K means clustering: K-means clustering is applied to the dataset, and each cluster's topic words are identified. These words represent the central theme or topics within each cluster and are derived from the frequency and relevance of the words in the documents within the respective cluster.
  
@@ -96,30 +96,36 @@ Topic words: classification,ocular,trauma,globe,injury,system,eye
 Topic words: end,movie,service,cloud,latency,streaming,load
 ...
 
+how many clusters do you want to use?: Press 0 to exit: 4 
+___________________________
+Intertia for k = 1: 0.003328
+Intertia for k = 2: 0.003115
+Intertia for k = 3: 0.002990
+Intertia for k = 4: 0.002751
+...
 ___________________________
 Topic keywords from K means clustering: 
 -----------------------
 Cluster 0:
-speed ball sports baseball stadium sport spin batting trauma ban
+ai game fairness player learning bias interaction layer strategy human
 Cluster 1:
-ai fairness model disease progression layer data bias filter learning
+service cloud performance simulator load resilience architecture circuit movie progression
 Cluster 2:
-ai game player adnexal ocular interaction foreign learning trauma human
+speed ball baseball sports stadium sport spin batting ban outdoor
 Cluster 3:
-service cloud performance simulator load resilience architecture circuit ocular movie
-_______________________________________________________
+ocular trauma classification adnexal globe eye foreign irritation injury drug
+__________________________________________
+Best Single Heap:
+________________________________________
+[(1, <1x5598 sparse matrix of type '<class 'numpy.float64'>'
+        with 1310 stored elements in Compressed Sparse Row format>, 1, 'ai_fairness_equal_gender_treatment_product_model.pdf'), (2, <1x5598 sparse matrix of type '<class 'numpy.float64'>'
+        with 951 stored elements in Compressed Sparse Row format>, 0.6512978340782284, 'ai_fairness_layer_data_model_bias_system.pdf'), (3, <1x5598 sparse matrix of type '<class 'numpy.float64'>'
+        with 1512 stored elements in Compressed Sparse Row format>, 0.40607807655477135, 'ai_game_interaction_player_human_design_play.pdf'), (4, <1x5598 sparse matrix of type '<class 'numpy.float64'>'
+        with 940 stored elements in Compressed Sparse Row format>, 0.6521082888246671, 'ai_game_learning_harm_card_business_feature.pdf'), (5, <1x5598 sparse matrix of type '<class 'numpy.float64'>'
+        with 548 stored elements in Compressed Sparse Row format>, 0.6324973521367505, 'ai_game_strategy_player_superhuman_every_human.pdf')]
 Average cosine similarity of the best heap: 0.6683963103188834
-Average Cosine Similarity for K means clusters: 0.3572087055856158
-________________________________________________________
-Best Heap:
-
-[
-(10, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1740 stored elements in Compressed Sparse Row format>, 0.79, 'attendance_strike_effects_variable_price_year_season.pdf'),
-(33, <1x4251 sparse matrix of type '<class 'numpy.float64'> with 1563 stored elements in Compressed Sparse Row format>, 0.85, 'second_base_positions_effects_average.pdf'),
-...
-]
-________________________________________________________
-silhouete coeff score:: 0.65
+Average Cosine Similarity for K means clusters: 0.42510646550287307
+silhouete coeff score: -0.14551093338715193
 ```
 - ![1 Clusters Word Cloud](./main_code/word_cloud_figures/cluster2_wordcloud.png)
 - ![1 Clusters Word Cloud](./main_code/word_cloud_figures/cluster3_wordcloud.png)
