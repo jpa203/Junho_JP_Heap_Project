@@ -74,6 +74,17 @@ After you have determined the optimal number of clusters, enter this optimal num
     - WordCloud Image: size of each word in the WordCloud will correspond to its frequency within the cluster. The more frequent a word, the larger it will appear in the WordCloud. The WordCloud is an additional tool to help you visualize the key terms or themes in your documents. It doesn't replace the quantitative measures provided in the output, such as the Average Cosine Similarity, the Silhouette Score, or the Matrix of Data Points. Rather, it complements these measures by providing a qualitative perspective.
 By using these different components together, you should have a comprehensive understanding of the clusters in your documents.
 
+    - Best Heap Visualization: A visual representation of the best heap structure determined by cosine similarity is also provided in the output. Each node in the heap structure represents a document in your data set, and the hierarchy is determined by the cosine similarity between the documents.
+      
+    - This visualization is designed to give you an intuitive understanding of the relationships between the documents based on their cosine similarity. The root of the heap represents the document that is most similar to others, based on the average cosine similarity. Each subsequent level of the heap represents documents that are less similar to the rest of the data set.
+      
+    - Here's how it works:
+        - Heap Structure: The heap structure is a binary tree, with the root representing the document with the highest average cosine similarity to the other documents. Each subsequent level of the tree represents documents with decreasing similarity.
+
+        - Node Details: Each node in the tree will display the name of the document.
+
+        - Heap Visualization File: The heap visualization will be saved as an image file in the working directory of the program, named as 'best_heap_visualization.png'.
+
 ## Expected Output
 An example of expected output would look like this:
 ```
