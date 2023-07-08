@@ -96,32 +96,26 @@ Note: Please adjust the threshold and k values (the number of most similar docum
 
 This script assumes that the documents to be analyzed are in PDF and docx format. Please ensure that the pdf_reader module functions pdf_to_text, read_pdf_tf_idf, and get_combined_token_dict are able to read your documents.
 
-### Draw_Heap
+## Draw_Heap
 
 - The scripts require a heap data structure as input. The heap should be a binary tree of tuples where each tuple contains a similarity score and a pair of documents. Replace the placeholders in the draw_heap() and draw_best_heap() functions with your data.
 
-Additional Information
 - The draw_heap() function generates a pyramid-like visualization of the heap, with each node labelled with the corresponding document name. The size of the node represents its level in the heap. It saves the visualization as a .png image and displays it.
 
 - The draw_best_heap() function does the same as draw_heap() but is specifically designed to highlight the "best" heap configuration.
 
 Note: The script does not build or manage the heap data structure. It is assumed that you have already generated the heap and are providing it as input to the draw_heap() and draw_best_heap() functions.
 
-### pdf_reader
+## pdf_reader
 
 - This Python script provides functions to extract key topics from .docx and .pdf files and renames the files based on the extracted topics. The script is implemented in Python and utilizes several libraries such as PyPDF2, NLTK, scikit-learn, and a custom module named read_docx_tf_idf.
 
-- Instructions
-    -  Install all the required dependencies. You can use pip to install these packages. For example:
-        ```
-        pip install PyPDF2 nltk scikit-learn
-        ```
-
-- This script requires a directory of .pdf and .docx files to be processed. Replace file_path in the main function with the path to your directory.
 - This script performs several operations on .docx and .pdf files. It starts by extracting text from the files, tokenizing the text, removing stopwords, and then identifies key topics using Latent Semantic Analysis (LSA).
+  
 - The identified key topics are used to rename the files. The original files will be renamed, so please ensure that you have a backup of your files if necessary.
-- The read_docx_tf_idf and read_pdf_tf_idf are custom modules used to read .docx and .pdf files respectively. Ensure you have these modules in your working directory or installed in your environment.
+  
 - The get_combined_token_dict() function creates a combined dictionary of the extracted text from the .docx and .pdf files and preprocesses the text before further operations.
+  
 - Non-English words and words not in the NLTK words corpus are filtered out during preprocessing.
 
 ### K_means_cluster
