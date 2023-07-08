@@ -23,7 +23,7 @@ The algorithm calculates the similarity between each document using cosine simil
 ## Instructions
 1. Install all the required dependencies. You can use pip to install these packages. For example:
 ```
-pip install matplotlib networkx scipy nltk sklearn
+pip install matplotlib networkx scipy nltk sklearn 
 ```
 2. Clone or download this repository to your local machine.
 
@@ -97,28 +97,16 @@ Note: Please adjust the threshold and k values (the number of most similar docum
 This script assumes that the documents to be analyzed are in PDF and docx format. Please ensure that the pdf_reader module functions pdf_to_text, read_pdf_tf_idf, and get_combined_token_dict are able to read your documents.
 
 ### Draw_Heap
-Instructions
-
-Ensure you have Python 3 installed. You can download it from here.
-- Install all the required dependencies. You can use pip to install these packages. For example:
-
-```
-pip install matplotlib networkx scipy nltk
-```
-- Clone or download this repository to your local machine.
-
-- You will need the module read_docx_tf_idf to be located in your Python path or the same directory. The read_docx_tf_idf module should provide a function that reads a .docx file and transforms it into a TF-IDF matrix.
 
 - The scripts require a heap data structure as input. The heap should be a binary tree of tuples where each tuple contains a similarity score and a pair of documents. Replace the placeholders in the draw_heap() and draw_best_heap() functions with your data.
-
-- To run the script, navigate to the directory containing the script and use the following command in the terminal:
 
 Additional Information
 - The draw_heap() function generates a pyramid-like visualization of the heap, with each node labelled with the corresponding document name. The size of the node represents its level in the heap. It saves the visualization as a .png image and displays it.
 
-- The draw_best_heap() function does the same as draw_heap() but is specifically designed to highlight the "best" heap configuration, according to your specified criteria.
+- The draw_best_heap() function does the same as draw_heap() but is specifically designed to highlight the "best" heap configuration.
 
 Note: The script does not build or manage the heap data structure. It is assumed that you have already generated the heap and are providing it as input to the draw_heap() and draw_best_heap() functions.
+
 ### pdf_reader
 
 - This Python script provides functions to extract key topics from .docx and .pdf files and renames the files based on the extracted topics. The script is implemented in Python and utilizes several libraries such as PyPDF2, NLTK, scikit-learn, and a custom module named read_docx_tf_idf.
