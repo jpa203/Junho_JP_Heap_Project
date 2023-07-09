@@ -1,5 +1,5 @@
 boto3==1.26.160
-docx==0.2.4
+python-docx
 feedparser==6.0.10
 matplotlib==3.7.0
 networkx==2.8.4

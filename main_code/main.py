@@ -6,7 +6,8 @@ matplotlib_axes_logger.setLevel('ERROR')
 from draw_heap import  draw_best_heap
 from K_means_cluster import elbow_method, plot_k_means, K_means_cluster
 from sklearn.cluster import KMeans
-
+import nltk
+nltk.download('words')
 """
 main function for K-means clustering
 """

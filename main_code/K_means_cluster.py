@@ -13,6 +13,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from sklearn.metrics.pairwise import cosine_similarity
+from tk import * # jp add
+#from tk import ttk # jp add
 
 """
 Enter the number of clusters you want to use
@@ -76,9 +78,14 @@ def elbow_method_test(tf_idf_matrix):
     cluster_count_lst = []
     
     while True:
-        # Create a Tk root widget
+	# create tk root widget
         root = Tk()
-        root.withdraw() # Hide the main window 
+        frm = ttk.Frame(root, padding=10)
+        frm.grid()
+        ttk.Label(frm, text="Hello World!").grid(column=0, row=0)
+        ttk.Button(frm, text="Quit", command=root.destroy).grid(column=1, row=0)
+        root.mainloop()
+        #root.withdraw() # Hide the main window 
 
         # Ask user for number of clusters
         num_of_clusters = simpledialog.askinteger("Input", "How many clusters do you want to use?: Press 0 to exit:",
