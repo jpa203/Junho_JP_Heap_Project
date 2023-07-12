@@ -57,7 +57,7 @@ After you have determined the optimal number of clusters, enter this optimal num
 ## Video Demonstration
 
 ![Screenshot 2023-07-12 at 9 08 27 AM](https://github.com/jpa203/Junho_JP_Heap_Project/assets/74083204/d90a03ca-856e-426b-bd75-91f419b9d1bb)
-[![Watch the video](https://youtu.be/https://youtu.be/x9Ps_8p_FmU)
+[![Video Title](https://img.youtube.com/vi/x9Ps_8p_FmU/0.jpg)](https://www.youtube.com/watch?v=x9Ps_8p_FmU)
 
 
 ## Output
