@@ -53,7 +53,11 @@ These are the results of the elbow method for determining the optimal number of 
 After you have determined the optimal number of clusters, enter this optimal number when prompted.
 
 6. Once you've input the number of clusters for your document analysis, the program will also generate a WordCloud image for each of these clusters.
-   
+
+## Video Demonstration
+
+[![Watch the video](https://img.youtube.com/vi/https://youtu.be/x9Ps_8p_FmU/0.jpg)](https://youtu.be/https://youtu.be/x9Ps_8p_FmU)
+
 ## Output
 - The output is comprised of multiple elements. Here is an overview:
 
@@ -83,6 +87,9 @@ By using these different components together, you should have a comprehensive un
         - Node Details: Each node in the tree will display the name of the document.
 
         - Heap Visualization File: The heap visualization will be saved as an image file in the working directory of the program, named as 'best_heap_visualization.png'.
+
+## Example run
+
 
 ## Expected Output
 An example of expected output would look like this:
