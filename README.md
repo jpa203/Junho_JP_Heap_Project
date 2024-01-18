@@ -10,11 +10,6 @@ This project introduces an approach to document clustering, employing Term Frequ
 - scipy
 - nltk
 - sklearn
-- [draw_heap (local module)](#Draw_Heap)
-- [pdf_reader (local module)](#PDF_Reader)
-- [K_means_cluster (local module)](#K_Means)
-- [read_docx_tf_idf (local module)](#K_Means)
-- [lsa (local module)](#lsa)
 
 ## Instructions
 1. Install all the required dependencies. You can use pip to install these packages. For example:
