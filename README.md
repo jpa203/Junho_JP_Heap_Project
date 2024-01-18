@@ -1,4 +1,4 @@
-# Document Clustering Algorithm implemented with heap data structure
+# Heap-Based Document Clustering System
 
 This project introduces an approach to document clustering, employing Term Frequency-Inverse Document Frequency (TF-IDF) and cosine similarity, implemented with heap data structures. This algorithm is designed to aid users in organizing documents within a directory in a computationally optimized way. By leveraging the heap data structure's average time complexity of O(log n) for insertions and deletions, we aim to improve performance when dealing with large datasets.
 
